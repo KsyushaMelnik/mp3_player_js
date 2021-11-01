@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mp3 player</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer src="js/index.js"></script>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="player">
+            <div class="title"><span>Now Playing</span></div>
+            <div class="cover"><img class="cover__img" src="img/cd.png" alt="cd"></div>
+            <div class="title-song"><span>Name song</span></div>
+            <div class="time__progress">
+                <div class="time-song">
+                    <span class="current__song">0:00</span>
+                    <span class="end__song">0:00</span>
+                </div>
+                <div class="progress__container">
+                    <div class="progress"></div>
+                </div>
+            </div>
+            <div class="buttons">
+                <div class="file">
+                    <input type="file" id="upload" accept=".mp3">
+                    <label for="upload"><img src="img/add.png" alt="add"></label>
+                    <audio id="audio" src=""></audio>
+                </div>
+                <div class="btn play"><img class="img__src" src="img/play.png" alt="play"></div>
+                <div class="btn stop"><img src="img/stop.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

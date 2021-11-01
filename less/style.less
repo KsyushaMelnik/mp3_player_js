@@ -1,0 +1,127 @@
+//out: ../css/style.css
+
+@primaryColor: #3163FF;
+@secondColor: #7645FF;
+
+body, html {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+div, ul, li, a, p, span, h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .player {
+        position: relative;
+        background-color: #fff;
+        max-width: 500px;
+        width: 100%;
+        padding: 25px;
+        margin-top: 30px;
+        background:  radial-gradient(70% 50%, #E9D0FF, #E1F3FF);
+        border-radius: 30px;
+        .title {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 600;
+            margin: 20px 0;
+            color: @primaryColor;
+        }
+        .cover {
+            > img {
+                max-width: 200px;
+                display: block;
+                margin: 0 auto;
+                &.active {
+                    animation: rotateAnimation 3s linear infinite;
+                }
+            }
+        }
+        .title-song {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 20px;
+            color: @primaryColor;
+            font-weight: 800;
+        }
+        .time__progress{
+            margin-top: 50px;
+            .time-song {
+                display: flex;
+                justify-content: space-between;
+            }
+            .progress__container {
+                background-color: #D8D8D8;
+                border-radius: 5px;
+                width: 100%;
+                height: 10px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                .progress {
+                    background-color: @secondColor;
+                    border-radius: 5px;
+                    height: 6px;
+                }
+        }
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            .file {               
+                margin-top: 25px;
+                #upload {
+                    opacity: 0;
+                    visibility: hidden;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                }
+                > label {
+                    cursor: pointer;
+                    > img {                        
+                        max-width: 50px;   
+                    }
+                }
+            }
+            .btn {
+                cursor: pointer;
+                margin-top: 25px;
+                > img {
+                    max-width: 50px;
+                }
+                &.pause {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    opacity: 0;
+                    visibility: hidden;
+                    &.active {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+}
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
